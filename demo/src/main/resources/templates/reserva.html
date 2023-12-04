@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" title="Coding design">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hotel de los Andes</title>
+    <link rel="icon" th:href="@{/css/images/logo2.png}" class="icon"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/tables.css}" />
+</head>
+
+<body>
+    <main class="table">
+        <section class="table__header">
+            <h1>Reservas</h1>
+            <div class="table__buttons">
+               <a th:href="@{reserva/new}" class="custom-button">Agregar</a>
+               <a th:href="@{/cliente}" class="custom-button">Volver Atrás</a>
+           </div>
+        </section>
+        <section class="table__body">
+            <table>
+               <thead>
+                   <tr>
+                        <th style="color: white;" >Id</th>
+                        <th style="color: white;" >Usuario</th>
+                        <th style="color: white;" >Habitacion</th>
+                        <th style="color: white;" >Fecha de entrada</th>
+                        <th style="color: white;" >Fecha de salida</th>
+                        <th style="color: white;" >Noches</th>
+                        <th style="color: white;" >Personas</th>
+                        <th style="color: white;" >Acciones</th>
+                   </tr>
+               </thead>                
+                </thead>
+                <tbody>
+                    <th:block th:each="tipo:${Reservas}">
+                        <tr>
+                            <td th:text = "${tipo.id}"></td>
+                            <td th:text = "${tipo.usuario_presencia}"></td>
+                            <td th:text = "${tipo.habitacion}"></td>
+                            <td th:text = "${tipo.fecha_entrada}"></td>
+                            <td th:text = "${tipo.fecha_salida}"></td>
+                            <td th:text = "${tipo.num_noches}"></td>
+                            <td th:text = "${tipo.num_personas}"></td>
+                            <td>
+                                <a th:href="@{reserva/{id}/edit(id=${tipo.id})}"class="no-underline">Editar</a>
+                                <a th:href="@{reserva/{id}/delete(id=${tipo.id})}"class="no-underline">Eliminar</a>
+                            </td>                             
+                        </tr>
+                    </th:block>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

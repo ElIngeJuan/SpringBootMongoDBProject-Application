@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel de los Andes</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+    <link rel="icon" th:href="@{/css/images/logo2.png}" class="icon"/>
+ 
+</head>
+<body>
+
+    <div class="banner">
+        <div class ="navbar">
+            <img th:src="@{../css/images/logo2.png}" class="logo">
+
+            <ul>
+                <li><a href="/hotel/">Home</a></li>
+            </ul>
+            
+        </div>
+        <div>
+            <div class="content-text">
+                <h1 style="font-style: italic; font-size: 80px;">BIENVENIDO</h1>
+                <p style=" font-size: 30px;">Gerente</p>
+                <br><br>
+            </div>
+
+            <div class="content-btn-group">
+                <div class=" content-btn">
+                    <button type="button" onclick="window.location.href='/hotel/gerente/habitaciones'"><span></span>1. Recaudo Habitación</button>
+                    <button type="button" onclick="window.location.href='/hotel/gerente/ocupacionhabitaciones'"><span></span>2. Índice de ocupación</button>
+                </div>
+                <div class=" content-btn">
+                    <button type="button" onclick="window.location.href='/hotel/gerente/consumosUsuario'"><span></span>3. Consumo por usuario</button>
+                    <button type="button" onclick="window.location.href='/hotel/gerente/informacionconsumo'"><span></span>4. Información de consumo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

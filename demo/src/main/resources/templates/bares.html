@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" title="Coding design">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hotel de los Andes</title>
+    <link rel="icon" th:href="@{/css/images/logo2.png}" class="icon"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/tables.css}" />
+</head>
+
+<body>
+    <main class="table">
+        <section class="table__header">
+            <h1>Bares</h1>
+            <div class="table__buttons">
+                <a th:href="@{bares/new}" class="custom-button">Agregar</a>
+                <a th:href="@{productos/new}" class="custom-button">Agregar Producto</a>
+                <a th:href="@{/administrador/servicios}" class="custom-button">Volver Atrás</a>
+           </div>
+        </section>
+        <section class="table__body">
+            <table>
+               <thead>
+                   <tr>
+                        <th  style="color: white;">Nombre</th>
+                        <th  style="color: white;">Capacidad</th>
+                        <th  style="color: white;">Estilo de musica</th>
+                        <th  style="color: white;">Productos</th>
+                        <th  style="color: white;">Acciones</th>    
+                        <th  style="color: white;">Acciones sobre productos</th>    
+                   </tr>
+               </thead>                
+                </thead>
+                <tbody>
+                    <th:block th:each="bar: ${servicios}">
+                        <th:block th:each="producto: ${bar.listaProductos}">
+                            <tr>
+                                <td th:text="${bar.nombre}"></td>
+                                <td th:text="${bar.capacidad}"></td>
+                                <td th:text="${bar.estiloMusica}"></td>
+                                <td th:text="${producto}"></td>
+                                <td>
+                                    <a th:href="@{bares/{id}/edit(id=${bar.id})}" class="no-underline">Editar</a>
+                                    <a th:href="@{bares/{id}/delete(id=${bar.id})}" class="no-underline">Eliminar</a>
+                                    
+                                </td>
+                                <td>
+                                    <a th:href="@{productos/{id}/{producto1}/edit(id=${bar.id},producto1=${producto})}" class="no-underline">Editar</a>
+                                    <a th:href="@{productos/{id}/{producto1}/delete(id=${bar.id},producto1=${producto})}" class="no-underline">Eliminar</a>
+                            </tr>
+                        </th:block>
+                    </th:block>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

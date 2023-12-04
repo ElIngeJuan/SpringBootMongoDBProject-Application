@@ -1,0 +1,22 @@
+{
+  $jsonSchema: {
+    bsonType: 'object',
+    required: [
+      'documento'
+    ],
+    properties: {
+      documento: {
+        bsonType: 'int'
+      },
+      reserva: {
+        bsonType: 'int'
+      },
+      check_in: {
+        bsonType: 'int'
+      },
+      check_out: {
+        bsonType: 'int'
+      }
+    }
+  }
+}

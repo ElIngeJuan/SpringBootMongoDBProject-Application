@@ -1,0 +1,73 @@
+{
+  $jsonSchema: {
+    bsonType: 'object',
+    required: [
+      '_id',
+      'habitacion',
+      'usuario_presencia',
+      'fecha_entrada',
+      'fecha_salida',
+      'num_noches',
+      'num_personas'
+    ],
+    properties: {
+      _id: {
+        bsonType: 'int'
+      },
+      habitacion: {
+        bsonType: 'int'
+      },
+      usuario_presencia: {
+        bsonType: 'int'
+      },
+      fecha_entrada: {
+        bsonType: 'string'
+      },
+      fecha_salida: {
+        bsonType: 'string'
+      },
+      num_noches: {
+        bsonType: 'int'
+      },
+      num_personas: {
+        bsonType: 'int'
+      },
+      consumos: {
+        bsonType: 'array',
+        items: {
+          bsonType: 'object',
+          required: [
+            'servicio',
+            'fecha',
+            'valor'
+          ],
+          properties: {
+            servicio: {
+              bsonType: 'string',
+              'enum': [
+                'Piscina',
+                'Bar',
+                'Internet',
+                'Gimnasio',
+                'Restaurante',
+                'Supermercado',
+                'Tienda',
+                'SPA',
+                'Lavanderia',
+                'Utensilios',
+                'Sala de conferencias',
+                'Sala de reuniones'
+              ]
+            },
+            fecha: {
+              bsonType: 'string'
+            },
+            valor: {
+              bsonType: 'int'
+            }
+          }
+        }
+      }
+    }
+  }
+}

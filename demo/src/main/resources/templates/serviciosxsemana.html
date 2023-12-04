@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" title="Coding design">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hotel de los Andes</title>
+    <link rel="icon" th:href="@{/css/images/logo2.png}" class="icon"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/tables.css}" />
+</head>
+
+<body>
+    <main class="table">
+        <section class="table__header">
+            <h1>Consultar Funcionamiento</h1>
+            <div class="table__buttons">
+                <a th:href="@{/hotel/gerente}" class="custom-button">Volver Atrás</a>
+           </div>
+        </section>
+        <section class="table__body">
+            <table>
+               <thead>
+                   <tr>
+                        <th style="color: white;">Semana</th>
+                        <th style="color: white;">Servicio Más Usado</th>
+                        <th style="color: white;">Cantidad de Usos del Servicio Más Usado</th>
+                        <th style="color: white;">Habitación Más Usada</th>
+                        <th style="color: white;">Cantidad de Usos de la Habitación Más Usada</th>
+                        <th style="color: white;">Habitación Menos Usada</th>
+                        <th style="color: white;">Cantidad de Usos de la Habitación Menos Usada</th>
+                   </tr>
+               </thead>                
+                </thead>
+                <tbody>
+                    <th:block th:each="data : ${semanas}">
+                        <tr>
+                            <td th:text="${data.getSEMANA()}"></td>
+                            <td th:text="${data.getSERVICIOMASUSADO()}"></td>
+                            <td th:text="${data.getSERVICIOMASCONTADO()}"></td>
+                            <td th:text="${data.getHABITACIONMASUSADA()}"></td>
+                            <td th:text="${data.getHABITACIONMASCONTADA()}"></td>
+                            <td th:text="${data.getLHABITACION()}"></td>
+                            <td th:text="${data.getLHABITACIONCOUNT()}"></td>
+                        </tr>
+                    </th:block>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Mostrar Reservas</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+    <div class="text-center">
+        <H1>Dias con mas ocupación</H1>
+    <table class="table table-hover table-border">
+        <tr class="thead-dark">
+            <th>Fecha de Entrada</th>
+            <th>Cantidad</th>
+        </tr>
+        <tr th:each="resultado : ${resultados}">
+            <td th:text="${resultado.getFECHA()}"></td>
+            <td th:text="${resultado.getCANTIDAD()}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

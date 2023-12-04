@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div th:fragment = "tipoHabitacionForm(titulo)" class="container border border-2 w-25">
+        <h1 th:text = "${titulo}" class="text-center"></h1>
+        <form>
+            
+            <label  class="col-form-label">Nombre</label>
+            <input class="form-control" type="text" id="tipo_habitacion" name="tipo_habitacion" required th:value="${TipoHabitacion.tipo_habitacion}" />
+           
+            <label  class="col-form-label">Capacidad</label>
+            <input class="form-control" type="number" id="capacidad" name="capacidad" required th:value="${TipoHabitacion.capacidad}"/>
+
+            <label  class="col-form-label">Dotacion</label>
+            <input class="form-control" type="text" id="dotacion" name="dotacion" required th:value="${TipoHabitacion.dotacion}" />
+
+            <div class="text-center">
+                <input type="submit" value="Guardar" class="btn btn-primary"/>
+                <a th:href="@{/..}" class="btn btn-primary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

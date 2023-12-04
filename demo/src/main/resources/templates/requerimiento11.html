@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" title="Coding design">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hotel de los Andes</title>
+    <link rel="icon" th:href="@{/css/images/logo2.png}" class="icon"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/tables.css}" />
+</head>
+
+<body>
+    <main class="table">
+        <section class="table__header">
+            <h1>Cliente Excelentes</h1>
+            <div class="table__buttons">
+                <a th:href="@{/hotel/gerente}" class="custom-button">Volver Atrás</a>
+           </div>
+        </section>
+        <section class="table__body">
+            <table>
+               <thead>
+                   <tr>
+                        <th style="color: white;">Id</th>
+                        <th style="color: white;">Usuario</th>
+                        <th style="color: white;">Mes</th>
+                        <th style="color: white;">Servicio</th>
+                        <th style="color: white;">Valor</th>
+                        <th style="color: white;">Duración</th>
+                        <th style="color: white;">Tipo de Área</th>
+                   </tr>
+               </thead>                
+                </thead>
+                <tbody>
+                    <tr th:each="usuario : ${usuarios}">
+                        <td th:text="${usuario.USUARIO_ID}"></td>
+                        <td th:text="${usuario.USERNAME}"></td>
+                        <td th:text="${usuario.MONTH}"></td>
+                        <td th:text="${usuario.SERVICIO_ID}"></td>
+                        <td th:text="${usuario.VALOR}"></td>
+                        <td th:text="${usuario.DURATION}"></td>
+                        <td th:text="${usuario.TIPO_AREA}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

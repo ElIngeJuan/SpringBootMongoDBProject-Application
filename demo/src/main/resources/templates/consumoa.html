@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" title="Coding design">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hotel de los Andes</title>
+    <link rel="icon" th:href="@{/css/images/logo2.png}" class="icon"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/tables.css}" />
+</head>
+
+<body>
+    <main class="table">
+        <section class="table__header">
+            <h1>Lista de Consumo de Áreas</h1>
+            <div class="table__buttons">
+               <a th:href="@{/hotel/empleado/consumoarea/new}" class="custom-button">Agregar</a>
+               <a th:href="@{/hotel/empleado}" class="custom-button">Volver Atrás</a>
+           </div>
+        </section>
+        <section class="table__body">
+            <table>
+               <thead>
+                   <tr>
+                        <th style="color: white;" >Habitación</th>
+                        <th style="color: white;" >Descripción</th>
+                        <th style="color: white;" >Valor</th>
+                        <th style="color: white;" >Fecha</th>
+                        <th style="color: white;" >Acciones</th>
+                   </tr>
+               </thead>                
+                </thead>
+                <tbody>
+                    <th:block th:each="consumo : ${consumos}">
+                        <tr>
+                            <td th:text="${consumo.getHabitacion()}"></td>
+                            <td th:text="${consumo.getDescripcion()}"></td>
+                            <td th:text="${consumo.getValor()}"></td>
+                            <td th:text="${consumo.getFecha()}"></td>
+                            <td>
+                                <a th:href="@{/hotel/empleado/consumoarea/{id}/{id2}/edit(id=${consumo.getId_factura()}, id2=${consumo.getId_area()})}" class="no-underline">Editar</a>
+                                
+                            </td>
+                        </tr>
+                    </th:block>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

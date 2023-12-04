@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div th:fragment="habitacionForm(titulo)" class="container border border-2 w-25">
+        <h1 th:text="${titulo}" class="text-center"></h1>
+        <form>
+
+            <label class="col-form-label" for="tipo">Tipo de habitacion:</label>
+            <select class="form-control" id="idh" name="idh" required>
+                <th:block th:each="tipo : ${Tipos}" >
+                    <option th:value="${tipo.id}" th:text="${tipo.tipo_habitacion}" th:selected></option>
+                </th:block>
+            </select><br>
+
+    
+            <label class="col-form-label">Numero de habitacion:</label>
+            <input class="form-control" type="number" id="id" name="id" required th:value="${habitaciones.id}"/><br>
+
+
+            <label class="col-form-label">Valor por noche:</label>
+            <input class="form-control" type="number" id="valor_noche" name="valor_noche" required th:value="${habitaciones.valor_noche}"/><br>
+
+            <div class="text-center">
+                <input type="submit" value="Guardar" class="btn btn-primary"/>
+                <a th:href="@{/..}" class="btn btn-primary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

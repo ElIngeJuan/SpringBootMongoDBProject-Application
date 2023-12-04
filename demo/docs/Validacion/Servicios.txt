@@ -1,0 +1,76 @@
+{
+  $jsonSchema: {
+    bsonType: 'object',
+    required: [
+      'nombre',
+      'tipo'
+    ],
+    properties: {
+      nombre: {
+        bsonType: 'string'
+      },
+      tipo: {
+        bsonType: 'string',
+        'enum': [
+          'Piscina',
+          'Bar',
+          'Internet',
+          'Gimnasio',
+          'Restaurante',
+          'Supermercado',
+          'Tienda',
+          'SPA',
+          'Lavanderia',
+          'Utensilios',
+          'Sala de conferencias',
+          'Sala de reuniones'
+        ]
+      },
+      capacidad: {
+        bsonType: 'int'
+      },
+      estiloMusica: {
+        bsonType: 'string'
+      },
+      profundidad: {
+        bsonType: 'int'
+      },
+      maquinas: {
+        bsonType: 'array',
+        items: {
+          bsonType: 'string'
+        }
+      },
+      estiloRestaurante: {
+        bsonType: 'string'
+      },
+      listaProductos: {
+        bsonType: 'array',
+        items: {
+          bsonType: 'string'
+        }
+      },
+      tipoTienda: {
+        bsonType: 'string'
+      },
+      duracion: {
+        bsonType: 'string'
+      },
+      numeroPrendas: {
+        bsonType: 'int'
+      },
+      utensilio: {
+        bsonType: 'string'
+      },
+      equipos: {
+        bsonType: 'string'
+      },
+      horarioApertura: {
+        bsonType: 'string'
+      },
+      horarioCierre: {
+        bsonType: 'string'
+      }
+    }
+  }
+}

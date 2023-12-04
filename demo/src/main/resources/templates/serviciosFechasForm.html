@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumos de un usuario</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <form action="/hotel/gerente/serviciosxfechas" method="post" class="border border-2 p-3 rounded">
+            <h2 class="text-center">Consultar Consumos de un Usuario</h2>
+            <div class="form-group">
+                <label for="fechaInicio">Fecha de inicio:</label>
+                <input type="date" id="fechaInicio" name="fechaInicio" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="fechaFin">Fecha de fin:</label>
+                <input type="date" id="fechaFin" name="fechaFin" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Consultar</button>
+            <div class="text-center mt-3">
+                <a href="/gerente" class="btn btn-secondary">Volver atrás</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

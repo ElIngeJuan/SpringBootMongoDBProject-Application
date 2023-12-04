@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+    <div th:fragment = "SpaForm(titulo)" class="container border border-2 w-25">
+        <h1 th:text = "${titulo}" class="text-center"></h1>
+        <form>
+            <label class="col-form-label">Nombre</label>
+            <input class="form-control" type="text" id="nombre"
+            name="nombre" required th:value="${spa.nombre}"/>
+
+            <label class="col-form-label" for="tipo">Tipo:</label>
+            <select class="form-control" id="tipo" name="tipo" required th:value="${spa.tipo}">
+                <option value="SPA">SPA</option>
+            </select>
+
+            <label class="col-form-label">Duracion (Horas)</label>
+            <input class="form-control" type="number" id="duracion"
+            name="duracion" required th:value="${spa.duracion}"/>
+
+        
+            <div class="text-center">
+                <input type="submit" value0="Guardar" class="btn btn-primary"/>
+                <a th:href="@{/}" class="btn btn-primary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

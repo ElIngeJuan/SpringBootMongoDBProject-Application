@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" title="Coding design">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hotel de los Andes</title>
+    <link rel="icon" th:href="@{/css/images/logo2.png}" class="icon"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/tables.css}" />
+</head>
+
+<body>
+    <main class="table">
+        <section class="table__header">
+            <h1>Check In/Out</h1>
+            <div class="table__buttons">
+               <a th:href="@{usuarioPresencia/new}" class="custom-button">Agregar</a>
+               <a th:href="@{/recepcionista}" class="custom-button">Volver Atrás</a>
+           </div>
+        </section>
+        <section class="table__body">
+            <table>
+               <thead>
+                   <tr>
+                        <th style="color: white;">Reserva ID</th>
+                        <th style="color: white;">Usuario ID</th>
+                        <th style="color: white;">Check-In</th>
+                        <th style="color: white;">Check-Out</th>
+                        <th style="color: white;">Acciones</th>
+                   </tr>
+               </thead>                
+                </thead>
+                <tbody>
+                    <th:block th:each="usuarioPresencia : ${usuarioPresencia}">
+                        <tr>
+                            <td th:text="${usuarioPresencia.reserva}"></td>
+                            <td th:text="${usuarioPresencia.documento}"></td>
+                            <td th:text="${usuarioPresencia.check_in == 1 ? 'Realizado' : 'No Realizado'}"></td>
+                            <td th:text="${usuarioPresencia.check_out == 1 ? 'Realizado' : 'No Realizado'}"></td>
+                            <td>
+                                <a th:href="@{usuarioPresencia/{id}/edit(id=${usuarioPresencia.id})}"class="no-underline">Realizar Check-In/Out</a>
+                            </td>
+                        </tr>
+                        </th:block>
+
+
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

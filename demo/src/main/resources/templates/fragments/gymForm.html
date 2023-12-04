@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div th:fragment = "gymForm(titulo)" class="container border border-2 w-25">
+        <h1 th:text = "${titulo}" class="text-center"></h1>
+        <form>
+            <label class="col-form-label">Nombre: </label>
+            <input class="form-control" type="text" id="nombre"
+            name="nombre" required th:value="${Gyms.nombre}"/>
+
+            <label class="col-form-label">Capacidad: </label>
+            <input class="form-control" type="number" id="capacidad"
+            name="capacidad" required th:value="${Gyms.capacidad}"/>
+
+            
+            <label class="col-form-label" for="tipo">Tipo:</label>
+            <select class="form-control" id="tipo" name="tipo" required th:value="${Gyms.tipo}">
+                <option value="Gimnasio">Gimnasio</option>
+            </select>
+
+            <label class="col-form-label">Hora de apertura: </label>
+            <input class="form-control" type="time" id="horarioApertura"
+            name="horarioApertura" required th:value="${Gyms.horarioApertura}"/>
+
+            <label class="col-form-label">Hora de cierre: </label>
+            <input class="form-control" type="time" id="horarioCierre"
+            name="horarioCierre" required th:value="${Gyms.horarioCierre}"/>
+            <div class="text-center">
+                <input type="submit" value="Guardar" class="btn btn-primary"/>
+                <a th:href="@{/..}" class="btn btn-primary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

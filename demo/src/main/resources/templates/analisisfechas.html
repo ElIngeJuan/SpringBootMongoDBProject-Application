@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" title="Coding design">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hotel de los Andes</title>
+    <link rel="icon" th:href="@{/css/images/logo2.png}" class="icon"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/tables.css}" />
+</head>
+
+<body>
+    <main class="table">
+        <section class="table__header">
+            <h1>Dias con más operación operación</h1>
+        </section>
+        <section class="table__body">
+            <table>
+               <thead>
+                   <tr>
+                    <th style="color: white;">Fecha de Entrada</th>
+                    <th style="color: white;">Cantidad</th>
+                   </tr>
+               </thead>                
+                </thead>
+                <tbody>
+                    <tr th:each="resultado : ${mayores}">
+                        <td th:text="${resultado.getFECHA()}"></td>
+                        <td th:text="${resultado.getCANTIDAD()}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    
+    <main class="table">
+        <section class="table__header">
+            <h1>Dias con menor ocupación</h1>
+        </section>
+        <section class="table__body">
+            <table>
+               <thead>
+                   <tr>
+                    <th style="color: white;">Fecha de Entrada</th>
+                    <th style="color: white;">Cantidad</th>
+                   </tr>
+               </thead>                
+                </thead>
+                <tbody>
+                    <tr th:each="resultado : ${menores}">
+                        <td th:text="${resultado.getFECHA()}"></td>
+                        <td th:text="${resultado.getCANTIDAD()}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+
+    <main class="table">
+        <section class="table__header">
+            <h1>Dias con mayor consumo</h1>
+        </section>
+        <section class="table__body">
+            <table>
+               <thead>
+                   <tr>
+                    <th style="color: white;">Fecha de Entrada</th>
+                    <th style="color: white;">Cantidad</th>
+                   </tr>
+               </thead>                
+                </thead>
+                <tbody>
+                    <tr th:each="resultado : ${consumos}">
+                        <td th:text="${resultado.getFECHA()}"></td>
+                        <td th:text="${resultado.getCANTIDAD_TOTAL()}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+
+</body>
+</html>

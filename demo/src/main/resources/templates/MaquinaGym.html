@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+    <div class="text-center">
+        <h1>Maquinas Gym</h1>
+            <table class="table table-hover table-border">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Gym</th>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <th:block th:each="tipo:${maquinaGyms}">
+                    <tr>
+                        <td th:text = "${tipo.gym.gym_id}"></td>
+                        <td th:text = "${tipo.maquina_id}"></td>
+                        <td th:text = "${tipo.nombre}"></td>
+                        <td>
+                        </td>
+                    </tr>
+                </th:block>
+            </table>
+            <div>
+                <a th:href="@{Maquinas/new}" class="btn btn-primary">Agregar</a>
+                <a th:href="@{/hotel/administrador}" class="btn btn-primary">Volver Atrás</a>
+            </div>
+            <br/>
+        </div>
+</body>
+</html>

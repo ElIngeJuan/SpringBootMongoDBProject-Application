@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" title="Coding design">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hotel de los Andes</title>
+    <link rel="icon" th:href="@{/css/images/logo2.png}" class="icon"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/tables.css}" />
+</head>
+
+<body>
+    <main class="table">
+        <section class="table__header">
+            <h1>Lista de consumos de un usuario</h1>
+            <div class="table__buttons">
+                <a th:href='@{consumoarea/{id}/new(id=${documento})}' class="custom-button">Agregar</a>
+               <a th:href="@{/empleado}" class="custom-button">Volver Atrás</a>
+           </div>
+        </section>
+        <section class="table__body">
+            <table>
+               <thead>
+                   <tr>
+                        <th style="color: white;" >Documento</th>
+                        <th style="color: white;" >Numero habitacion</th>
+                        <th style="color: white;" >Servicio</th>
+                        <th style="color: white;" >Fecha</th>
+                        <th style="color: white;" >Valor</th>
+                        <th style="color: white;" >Acciones</th>
+                   </tr>
+               </thead>                
+                </thead>
+                <tbody>
+                    <th:block th:each="usuario : ${usuarioinfo}">
+                        <th:block th:each="consumo1 : ${usuario.consumos}">
+                            <tr>
+                                <td th:text="${usuario.usuario_presencia}"></td>
+                                <td th:text="${usuario.habitacion}"></td>
+                                <td th:text="${consumo1.servicio}"></td>
+                                <td th:text="${consumo1.fecha}"></td>
+                                <td th:text="${consumo1.valor}"></td>
+                                <td>
+                                    <a th:href="@{consumoarea/{id}/{servicio}/{fecha}/{valor}/edit(id=${usuario.id},servicio=${consumo1.servicio},fecha=${consumo1.fecha},valor=${consumo1.valor})}" class="no-underline">Editar</a>
+                                    <a th:href="@{consumoarea/{id}/{servicio}/{fecha}/{valor}/delete(id=${usuario.id},servicio=${consumo1.servicio},fecha=${consumo1.fecha},valor=${consumo1.valor})}" class="no-underline">Eliminar</a>
+                                </td>                    
+                            </tr>
+                        </th:block>
+                    </th:block>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Consumos por Área</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <form action="/hotel/gerente/req9v2/consumohotelservicios" method="post" class="border border-2 p-3 rounded">
+            <h2 class="text-center">Consultar Consumos por Área</h2>
+            <div class="form-group">
+                <label for="fechaInicio">Fecha de inicio:</label>
+                <input type="date" id="fechaInicio" name="FECHA_INICIAL" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="fechaFin">Fecha de fin:</label>
+                <input type="date" id="fechaFin" name="FECHA_FINAL" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="area">Área:</label>
+                <input type="text" id="area" name="AREA" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="idArea">ID de Área:</label>
+                <input type="number" id="idArea" name="ID_AREA" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Consultar</button>
+            <div class="text-center mt-3">
+                <a href="/gerente" class="btn btn-secondary">Volver atrás</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

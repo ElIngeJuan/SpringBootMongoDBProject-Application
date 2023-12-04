@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+ <html lang="en" title="Coding design">
+ 
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Hotel de los Andes</title>
+     <link rel="icon" th:href="@{/css/images/logo2.png}" class="icon"/>
+     <link rel="stylesheet" type="text/css" th:href="@{/css/tables.css}" />
+ </head>
+ 
+ <body>
+     <main class="table">
+         <section class="table__header">
+             <h1>Usuarios</h1>
+             <div class="table__buttons">
+                <a th:href="@{usuarios/new}"  class="custom-button">Crear Usuario</a>
+                <a th:href="@{/administrador}" class="custom-button">Volver Atrás</a>
+            </div>
+         </section>
+         <section class="table__body">
+             <table>
+                <thead>
+                    <tr>
+                        <th style="color: white;">Username</th>
+                        <th style="color: white;">Tipo de documento</th>
+                        <th style="color: white;">Documento</th>
+                        <th style="color: white;">Email</th>
+                        <th style="color: white;">Tipo Usuario</th>
+                        <th style="color: white;">Acciones</th>
+                    </tr>
+                </thead>                
+                 </thead>
+                 <tbody>
+                    <th:block th:each="usuario:${usuarios}">
+                        <tr>
+                            <td th:text = "${usuario.usuario.nombres}"></td>
+                            <td th:text = "${usuario.usuario.tipo_documento}"></td>
+                            <td th:text = "${usuario.usuario.documento}"></td>
+                            <td th:text = "${usuario.usuario.email}"></td>
+                            <td th:text = "${usuario.usuario.tipo_usuario}"></td>
+        
+                            <td>
+                                <a th:href="@{usuarios/{id}/edit(id=${usuario.id})}"class="no-underline">Editar</a>
+                                <a th:href="@{usuarios/{id}/delete(id=${usuario.id})}"class="no-underline">Eliminar</a>
+                            </td>
+                        </tr>
+                    </th:block>
+                 </tbody>
+             </table>
+         </section>
+     </main>
+ </body>
+ </html>
+
+

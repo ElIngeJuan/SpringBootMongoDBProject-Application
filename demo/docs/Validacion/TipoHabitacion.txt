@@ -1,0 +1,42 @@
+{
+    $jsonSchema: {
+      bsonType: 'object',
+      required: [
+        '_id',
+        'tipo_habitacion',
+        'capacidad',
+        'dotacion'
+      ],
+      properties: {
+        _id: {
+          bsonType: 'int'
+        },
+        tipo_habitacion: {
+          bsonType: 'string'
+        },
+        capacidad: {
+          bsonType: 'int'
+        },
+        dotacion: {
+          bsonType: 'string'
+        },
+        habitaciones: {
+          bsonType: 'array',
+          items: {
+            bsonType: 'object',
+            required: [
+              'valor_noche'
+            ],
+            properties: {
+              id: {
+                bsonType: 'int'
+              },
+              valor_noche: {
+                bsonType: 'int'
+              }
+            }
+          }
+        }
+      }
+    }
+  }

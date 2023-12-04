@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel de los Andes</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+    <link rel="icon" th:href="@{/css/images/logo2.png}" class="icon"/>
+ 
+
+</head>
+<body>
+
+    <div class="banner">
+        <div class ="navbar">
+            <img th:src="@{../css/images/logo2.png}" class="logo">
+
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+            
+        </div>
+
+
+        <div class="content">
+            <h1>Hotel de los Andes</h1>
+            <p>Seleccione el tipo de usuario con el que desea acceder</p>
+            <br><br><br>
+            <div>
+                <button type="button" onclick="window.location.href='/hotel/administrador'"> <span></span> Administrador</button>
+                <button type="button" onclick="window.location.href='/hotel/cliente'"><span></span> Cliente</button>
+                <button type="button" onclick="window.location.href='/hotel/recepcionista'"><span></span> Recepcionista</button>
+                <button type="button" onclick="window.location.href='/hotel/empleado'"><span></span> Empleado</button>
+                <button type="button" onclick="window.location.href='/hotel/gerente'"><span></span> Gerente</button>
+            </div>
+                </div>
+            
+    </div>
+
+</body>
+</html>

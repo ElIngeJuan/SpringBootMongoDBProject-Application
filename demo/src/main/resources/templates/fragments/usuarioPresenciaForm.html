@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario de Presencia</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+    <div th:fragment="usuarioPresenciaForm(titulo)" class="container border border-2 w-25">
+        <h1 th:text="${titulo}" class="text-center"></h1>
+        <form>
+
+
+            <label class="col-form-label">Cedula:</label>
+            <input class="form-control" type="number" id="documento" name="documento" required th:value="${usuarioPresencia.documento}" />
+
+            <label class="col-form-label">Reserva:</label>
+            <input class="form-control" type="number" id="reserva" name="reserva" required th:value="${usuarioPresencia.reserva}" />
+
+            <label class="col-form-label" for="tipo">Registrar Check-In:</label>
+            <select class="form-control" id="check_in" name="check_in" required>
+                <option value=0 th:selected="${usuarioPresencia.check_in eq '0'}">No Realizado.</option>
+                <option value=1 th:selected="${usuarioPresencia.check_in eq '1'}">Realizado</option>
+            </select>
+
+            <label class="col-form-label" for="tipo">Registrar Check-Out:</label>
+            <select class="form-control" id="check_out" name="check_out" required>
+                <option value=0 th:selected="${usuarioPresencia.check_out eq '0'}">No Realizado.</option>
+                <option value=1 th:selected="${usuarioPresencia.check_out eq '1'}">Realizado</option>
+            </select>
+
+
+            <div class="text-center">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+                <a th:href="@{/hotel/recepcionista/usuarioPresencia}" class="btn btn-primary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

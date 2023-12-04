@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" title="Coding design">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hotel de los Andes</title>
+    <link rel="icon" th:href="@{/css/images/logo2.png}" class="icon"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/tables.css}" />
+</head>
+
+<body>
+    <main class="table">
+        <section class="table__header">
+            <h1>Habitaciones</h1>
+            <div class="table__buttons">
+               <a th:href="@{habitaciones/new}" class="custom-button">Agregar</a>
+               <a th:href="@{/administrador}" class="custom-button">Volver Atrás</a>
+           </div>
+        </section>
+        <section class="table__body">
+            <table>
+               <thead>
+                   <tr>
+                        <th style="color: white;" >Id</th>
+                        <th style="color: white;" >Tipo</th>
+                        <th style="color: white;" >Valor</th>
+                        <th style="color: white;" >Dotación</th>
+                        <th style="color: white;" >Acciones</th>
+                   </tr>
+               </thead>                
+                </thead>
+                <tbody>
+                    <th:block th:each="tipo:${habitaciones}">
+                        <th:block th:each="habitacion : ${tipo.habitaciones}">
+                            <tr>
+                                <td th:text="${habitacion.id}"></td>
+                                <td th:text="${tipo.tipo_habitacion}"></td>
+                                <td th:text="${habitacion.valor_noche}"></td>
+                                <td th:text="${tipo.dotacion}"></td>
+                                <td>
+                                    <a th:href="@{habitaciones/{id}/{id2}/edit(id=${tipo.id},id2=${habitacion.id})}" class="no-underline">Editar</a>
+                                    <a th:href="@{habitaciones/{id}/{id2}/delete(id=${tipo.id},id2=${habitacion.id})}" class="no-underline">Eliminar</a>
+                                </td>
+                            </tr>
+                        </th:block>
+                    </th:block>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

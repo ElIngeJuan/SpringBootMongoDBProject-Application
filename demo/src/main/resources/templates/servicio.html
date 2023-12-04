@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel de los Andes</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+    <link rel="icon" th:href="@{/css/images/logo2.png}" class="icon"/>
+ 
+</head>
+<body>
+    <div class="banner">
+        <div class ="navbar">
+            <img src="../static/css/images/logo2.png" class="logo">
+
+            <ul>
+                <li><a href="/hotel/">Home</a></li>
+            </ul>
+            
+        </div>
+        <div>
+            <div class="content-text">
+                <h1 style="font-style: italic; font-size: 80px;">SERVICIOS</h1>
+            </div>
+
+              
+            <div class="content-btn-group">
+                <div class=" content-btn">
+
+                    <button type="button" onclick="window.location.href='/hotel/administrador/servicios/servicioropa'"><span></span>Lavanderia</button>
+                    <button type="button" onclick="window.location.href='/hotel/administrador/servicios/internet'"><span></span>Internet</button>
+                    <button type="button" onclick="window.location.href='/hotel/administrador/servicios/utensilio'"><span></span>Utensilios</button>
+                    <button type="button" onclick="window.location.href='/hotel/administrador/servicios/salasconferencia'"><span></span>Salas de Conferencias</button>
+                    <button type="button" onclick="window.location.href='/hotel/administrador/servicios/salasreunion'"><span></span>Salas de Reuniones</button>
+                    <button type="button" onclick="window.location.href='/hotel/administrador/servicios/piscina'"><span></span>Psicina</button>
+                </div>
+                <div class=" content-btn">
+                    <button type="button" onclick="window.location.href='/hotel/administrador/servicios/bares'"><span></span>Bares</button>
+                    <button type="button" onclick="window.location.href='/hotel/administrador/servicios/restaurantes'"><span></span>Restaurantes</button>
+                    <button type="button" onclick="window.location.href='/hotel/administrador/servicios/Supermercados'"><span></span>Supermercados</button>
+                    <button type="button" onclick="window.location.href='/hotel/administrador/servicios/tiendas'"><span></span>Tiendas</button>
+                    <button type="button" onclick="window.location.href='/hotel/administrador/servicios/Gyms'"><span></span>Gym</button>
+                    <button type="button" onclick="window.location.href='/hotel/administrador/servicios/spa'"><span></span>Spa</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

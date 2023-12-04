@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" title="Coding design">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hotel de los Andes</title>
+    <link rel="icon" th:href="@{/css/images/logo2.png}" class="icon"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/tables.css}" />
+</head>
+
+<body>
+    <main class="table">
+        <section class="table__header">
+            <h1>Servicio con ciertas caracteristicas</h1>
+            <div class="table__buttons">
+                <a th:href="@{/gerente}" class="custom-button">Volver Atrás</a>
+           </div>
+        </section>
+        <section class="table__body">
+            <table>
+               <thead>
+                   <tr>
+                          <th>Documento</th>
+                          <th>Agrupado</th>
+                          <th>Veces utilizado</th>
+                          <th>Ultima fecha</th>
+                   </tr>
+               </thead>                
+                </thead>
+                <tbody>
+                    <tr th:each="resultado : ${resultados}">
+                        <td th:text="${resultado._id.documento}"></td>
+                        <td th:text="${resultado._id.agrupado}"></td>
+                        <td th:text="${resultado.vecesUtilizado}"></td>
+                        <td th:text="${resultado.ultimaFecha}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

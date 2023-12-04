@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Consumos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <form action="/hotel/gerente/informacionconsumo" method="post" class="border border-2 p-3 rounded">
+            <h2 class="text-center">Consulta de Consumos</h2>
+            <div class="form-group">
+                <label for="fechaInicio">Fecha de inicio:</label>
+                <input type="date" id="fechaInicio" name="fechaInicio" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="fechaFin">Fecha de fin:</label>
+                <input type="date" id="fechaFin" name="fechaFin" class="form-control">
+            </div>
+
+            
+            <label class="col-form-label" for="agrupar">Agrupar por:</label>
+            <select class="form-control" id="agrupar" name="agrupar">
+                <option value="$consumos.fecha">Fecha</option>
+                <option value="$consumos.servicio"> Servicio</option>
+
+            </select>
+
+            <label class="col-form-label" for="Criterio">Criterio de orden:</label>
+            <select class="form-control" id="Criterio" name="Criterio">
+                <option value="ultimaFecha"> Ultima fecha de consumo</option>
+                <option value="vecesUtilizado"> Cantidad de servicios</option>
+                <option value="_id.documento"> Documento</option>
+            </select>
+
+            <label class="col-form-label" for="orden">orden de orden:</label>
+            <select class="form-control" id="orden" name="orden">
+                <option value="1">Ascendente</option>
+                <option value="-1">Descendente</option>
+            </select>
+
+
+            <button type="submit" class="btn btn-primary">Consultar</button>
+            <div class="text-center mt-3">
+                <a href="/gerente" class="btn btn-secondary">Volver atrás</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

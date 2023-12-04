@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <title>Servicios Populares</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+    <div class="text-center"></div>
+    <h1>Lista de consumos de un usuario</h1>
+    <table class="table table-hover table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Usuario</th>
+                <th>Nombre</th>
+                <th>ID de Área</th>
+                <th>Tipo de Área</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+        <th:block th:each="consumo : ${ConsumosUsuario}">
+            <tr>
+                <td th:text="${consumo.getUsuario()}"></td>
+                <td th:text="${consumo.getNombre()}"></td>
+                <td th:text="${consumo.getID_AREA()}"></td>
+                <td th:text="${consumo.getTIPO_AREA()}"></td>
+                <td th:text="${consumo.getFECHA()}"></td>
+            </tr>
+        </th:block>
+    </table>
+    <div>
+        <a th:href='@{/gerente}' class="btn btn-primary">Volver Atrás</a>
+    </div>
+</body>
+</html>

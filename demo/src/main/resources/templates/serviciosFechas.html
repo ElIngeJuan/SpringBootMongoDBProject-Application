@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" title="Coding design">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hotel de los Andes</title>
+    <link rel="icon" th:href="@{/css/images/logo2.png}" class="icon"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/tables.css}" />
+</head>
+
+<body>
+    <main class="table">
+        <section class="table__header">
+            <h1>20 servicios más populares</h1>
+            <div class="table__buttons">
+                <a th:href="@{/hotel/gerente}" class="custom-button">Volver Atrás</a>
+           </div>
+        </section>
+        <section class="table__body">
+            <table>
+               <thead>
+                   <tr>
+                    <th style="color: white;">Id</th>
+                    <th style="color: white;">Tipo</th>
+                    <th style="color: white;">Cantidad</th>
+                   </tr>
+               </thead>                
+                </thead>
+                <tbody>
+                    <th:block th:each="consumo : ${resultados}">
+                        <tr>
+                            <td th:text="${consumo.getID()}"></td>
+                            <td th:text="${consumo.getTIPO()}"></td>
+                            <td th:text="${consumo.getCANTIDAD()}"></td>
+                        </tr>
+                    </th:block>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>
